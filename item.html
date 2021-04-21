@@ -70,18 +70,18 @@
                 <h3>大兴大棚草莓</h3>
                 <p>草莓浆果柔软多汁，味美爽口，适合速冻保险贮藏，草莓速冻后，可以保持原有的色、香、味，既便于贮藏，又便于外销。</p>
                 <div class="prize_bar">
-                    <div class="show_prize fl">￥<em>16.80</em></div>
+                    <div class="show_prize fl">￥<em id="price">16.80</em></div>
                     <div class="show_unit fl">单位：500g</div>
                 </div>
                 <div class="goods_num clearfix">
                     <div class="num_name fl">数量：</div>
                     <div class="num_add fl">
-                        <input type="text" class="num_show fl" value="1">
-                        <a href="javascript:;" class="add fr">+</a>
-                        <a href="javascript:;" class="minus fr">-</a>
+                        <input type="text" id="inputnum" class="num_show fl" value="1">
+                        <a href="#"  onclick="click1()" class="add fr">+</a>
+                        <a href="#" onclick="click2()" class="minus fr">-</a>
                     </div>
                 </div>
-                <div class="total">总价：<em>16.80元</em></div>
+                <div class="total">总价：<em id="sumprice">16.80元</em></div>
                 <div class="operate_btn">
                     <a href="" class="buy_btn">立即购买</a>
                     <a href="" class="add_cart">加入购物车</a>
@@ -167,5 +167,22 @@
 
 <script src="js/main.js"></script>
 <script src="js/holder.min.js"></script>
+<script>
 
+        function click1(){
+            document.getElementById("inputnum").value++;
+            var num=document.getElementById("inputnum").value
+            var sumprice =document.getElementById("price").innerHTML*10000*num/10000;
+            document.getElementById("sumprice").innerHTML=sumprice+"元";
+        }
+
+
+    //点击-减少数量
+        function click2(){
+            document.getElementById("inputnum").value--;
+            var num=document.getElementById("inputnum").value
+            var sumprice =document.getElementById("price").innerHTML*10000*num/10000;
+            document.getElementById("sumprice").innerHTML=sumprice+"元";
+        }
+</script>
 </html>
